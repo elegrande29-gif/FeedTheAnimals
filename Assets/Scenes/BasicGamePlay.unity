@@ -146,14 +146,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -198,7 +198,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -298,6 +298,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &425805630
 MeshFilter:
@@ -387,6 +388,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &475985837
 MeshFilter:
@@ -488,6 +490,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1001 &582355057
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_Name
+      value: SimpleFarmer_Woman_01_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.787945
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0005965233
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.3282566
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9997507
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.019180192
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0097285835
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.006006135
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -2.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -1.129
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.71
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +661,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1590138458
 MeshFilter:
@@ -611,6 +671,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590138454}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1881005599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_Name
+      value: SimpleFarmer_Woman_02_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.468666
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00017869473
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.736049
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9996758
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0062518017
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.022879094
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.009258638
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.629
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.077
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 159920, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -618,3 +736,5 @@ SceneRoots:
   - {fileID: 534669905}
   - {fileID: 170076735}
   - {fileID: 992285706}
+  - {fileID: 582355057}
+  - {fileID: 1881005599}
