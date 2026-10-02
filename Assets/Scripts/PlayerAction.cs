@@ -37,16 +37,16 @@ public void OnThrowInput(InputAction.CallbackContext ctx)
         {
             foodIndex = 0;
         }
-        else if (controlName == "2" || controlName == "buttonEast")
+        else if (controlName.Contains("w"))
         {
             foodIndex = 1;
         }
-        else if (controlName == "3" || controlName == "buttonNorth")
+        else if (controlName.Contains("r"))
         {
             foodIndex = 2;
         }
 
-        ThrowFood(foodIndex);
+        ThrowFood(foodIndex); 
     }
 }
 
@@ -54,7 +54,7 @@ private void ThrowFood(int foodIndex)
 {
     if (foodItems != null && foodIndex >= 0 && foodIndex < foodItems.Length && foodItems[foodIndex] != null)
     {
-        GameObject thrownFood = Instantiate(foodItems[foodIndex], transform.position, transform.rotation);
+        GameObject thrownFood = Instantiate(foodItems[foodIndex], transform.position + Vector3.up, transform.rotation);
 
         if (audioSource != null && audioSource.clip != null)
         {
