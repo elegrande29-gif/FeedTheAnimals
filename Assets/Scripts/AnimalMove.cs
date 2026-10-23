@@ -1,23 +1,36 @@
 using UnityEngine;
 
-public class AnimalMove : MonoBehaviour
+public class EatFood : MonoBehaviour
 {
-    protected float animalSpeed;
-    private float outOfScene;
-
-    private void Update()
+    public enum HungerState
     {
-        MoveForward();
-        DeleteOutOfScene();
+        Hungry,
+        NotHungry
     }
 
-    private void MoveForward()
+    [Header("Food Configuration")]
+    [Tooltip("Drag a Food Prefab into this field")]
+    [SerializeField] protected GameObject FoodItEats;
+
+    private bool IsHungry = true;
+
+    private void OnCollisionEnter(Collision collision)
     {
+        if (IsHungry)
+        {
+            // Check if the collided object matches the assigned FoodItEats prefab name
+            if (FoodItEats != null && collision.gameObject.name.Contains(FoodItEats.name))
+            {
+                Destroy(collision.gameObject);
 
-    }
+                if (UIManager.Instance != null)
+                {
+                    UIManager.Instance.ScoreUpdate(10);
+                    UIManager.Instance.AnimalsRemainingUpdate();
+                }
 
-    private void DeleteOutOfScene()
-    {
-
+                IsHungry = false;
+            }
+        }
     }
 }

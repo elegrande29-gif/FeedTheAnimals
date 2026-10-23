@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: -1456337186543558197}
+  - component: {fileID: -3436394579738867696}
   - component: {fileID: 4334646816212060319}
   m_Layer: 0
   m_Name: Food_Pizza_01
@@ -119,6 +120,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3436394579738867696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efa28f9df1f44e80adb7d5809688972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodLifeCycle
 --- !u!65 &4334646816212060319
 BoxCollider:
   m_ObjectHideFlags: 0

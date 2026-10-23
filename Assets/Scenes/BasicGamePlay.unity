@@ -218,6 +218,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50.000004, y: -60.000004, z: 0}
+--- !u!1001 &218832657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 187016, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_Name
+      value: Dog_Pug_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.957567
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000012211882
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.8596606
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495668, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
 --- !u!1 &425805626
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439021047}
   - component: {fileID: 439021046}
+  - component: {fileID: 439021048}
   m_Layer: 0
   m_Name: UIManager (1)
   m_TagString: Untagged
@@ -337,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fe225eb60d2499bb914e4a3b251dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  uiDocument: {fileID: 0}
 --- !u!4 &439021047
 Transform:
   m_ObjectHideFlags: 0
@@ -352,6 +411,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439021048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439021045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 0}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 0}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
 --- !u!1 &475985833
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db67ad148f7a1421d82dff7f3ecd2e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
+  animalPrefab: []
 --- !u!4 &1017952250
 Transform:
   m_ObjectHideFlags: 0
@@ -914,10 +997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a5c0f52f9d8468fb6d0524e72555de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAction
-  foodItems:
-  - {fileID: 157538, guid: 1f17d257118ec324ca772c5b2bacbb14, type: 3}
-  - {fileID: 100000, guid: 10d25933610222845ad3760a855829c4, type: 3}
-  - {fileID: 100000, guid: 06cdf427476835b42837c1ca7f8cdbd1, type: 3}
+  foodItems: []
+  throwForce: 15
 --- !u!114 &1343695606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,7 +1011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798a249bbbdc74dfb8408b8752c4097c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerSpeed: 10
 --- !u!114 &1343695609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,6 +1047,7 @@ GameObject:
   - component: {fileID: 1420489605}
   - component: {fileID: 1420489604}
   - component: {fileID: 1420489603}
+  - component: {fileID: 1420489606}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -1083,6 +1164,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fe225eb60d2499bb914e4a3b251dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  uiDocument: {fileID: 0}
+--- !u!114 &1420489606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420489601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423ba9aa43035438999c0c1a4f6b4099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Test_GameManager
 --- !u!1 &1590138454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,3 +1279,4 @@ SceneRoots:
   - {fileID: 1420489602}
   - {fileID: 1017952250}
   - {fileID: 439021047}
+  - {fileID: 218832657}
