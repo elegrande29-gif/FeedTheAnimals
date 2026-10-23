@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label text="Animals Remaining: 0" name="nimalsRemainingLabel" style="aspect-ratio: 500; font-size: 150px;"/>
+    <ui:VisualElement name="TopElements" style="flex-grow: 1; align-content: auto; align-items: flex-start; left: auto;">
+        <ui:Label text="Score" name="ScoreLabel" style="font-size: 150px; height: 1691px; width: 444px; left: 5px; bottom: -155px;"/>
+    </ui:VisualElement>
+</ui:UXML>

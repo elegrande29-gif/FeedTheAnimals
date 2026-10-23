@@ -1,73 +1,41 @@
-/*
-
-Component: PlayerMovement
-
-Attached to: Player GameObject
-
-Purpose: Handles player horizontal movement within defined boundary constraints and drives movement animation.
-*/
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-[SerializeField] protected float playerSpeed;
-private float centerToEdge = 22.0f;
-private bool directionXPositive;
+    protected float playerSpeed = 5.0f;
+    private float centerToEdge = 22.0f;
+    private Vector2 movementDirection;
+    private Animator animator;
 
-private Vector2 moveInput;
-private Animator animator;
-
-private void Start()
-{
-    animator = GetComponent<Animator>();
-}
-
-private void Update()
-{
-    Move();
-}
-
-// Called by: Player Input / Animator
-public void OnMovementInput(InputAction.CallbackContext ctx)
-{
-    moveInput = ctx.ReadValue<Vector2>();
-    DeterminePlayerDirection(moveInput);
-}
-
-private void DeterminePlayerDirection(Vector2 xValue)
-{
-    if (xValue.x > 0)
+    private void Start()
     {
-        directionXPositive = true;
+        animator = GetComponent<Animator>();
     }
-    else if (xValue.x < 0)
+
+    private void Update()
     {
-        directionXPositive = false;
+        Move();
     }
-}
 
-private void Move()
-{
-    if (moveInput.x != 0)
+    public void OnMovementInput(InputAction.CallbackContext ctx)
     {
-        float targetX = transform.position.x + moveInput.x * playerSpeed * Time.deltaTime;
-        targetX = Mathf.Clamp(targetX, -centerToEdge, centerToEdge);
+        movementDirection = ctx.ReadValue<Vector2>();
+    }
 
-        transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
+    private void Move()
+    {
+        // Move the player based on horizontal input along the X-axis
+        transform.Translate(Vector3.right * movementDirection.x * playerSpeed * Time.deltaTime);
 
+        // Keep the player within the horizontal boundaries defined by centerToEdge
+        float clampedX = Mathf.Clamp(transform.position.x, -centerToEdge, centerToEdge);
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+
+        // Update animator parameter if an Animator component is attached
         if (animator != null)
         {
-            animator.SetBool("IsRunning", true);
+            animator.SetBool("IsRunning", movementDirection.x != 0);
         }
     }
-    else
-    {
-        if (animator != null)
-        {
-            animator.SetBool("IsRunning", false);
-        }
-    }
-}
 }

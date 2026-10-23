@@ -1,71 +1,92 @@
-/*
-
-Component: PlayerAction
-
-Attached to: Player GameObject
-
-Purpose: Handles player throwing action by selecting food prefabs, instantiating them, playing audio, and applying force.
-*/
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAction : MonoBehaviour
 {
-[SerializeField] protected GameObject[] foodItems;
-private AudioSource audioSource;
-
-private void Start()
-{
-    audioSource = GetComponent<AudioSource>();
-}
-
-private void Update()
-{
-}
-
-// Called by: Player Input / Animator
-public void OnThrowInput(InputAction.CallbackContext ctx)
-{
-    if (ctx.performed)
+    // Enum representing the state machine states specified in the design doc
+    public enum ThrowState
     {
-        int foodIndex = 0;
-        string controlName = ctx.control.name;
-        Debug.Log($"Control name {controlName}");
-
-        if (controlName == "1" || controlName == "buttonSouth")
-        {
-            foodIndex = 0;
-        }
-        else if (controlName.Contains("w"))
-        {
-            foodIndex = 1;
-        }
-        else if (controlName.Contains("r"))
-        {
-            foodIndex = 2;
-        }
-
-        ThrowFood(foodIndex); 
+        NotThrowingFood,
+        ThrowingFood
     }
-}
 
-private void ThrowFood(int foodIndex)
-{
-    if (foodItems != null && foodIndex >= 0 && foodIndex < foodItems.Length && foodItems[foodIndex] != null)
+    [Header("Food Configuration")]
+    [SerializeField] protected GameObject[] foodItems; // Up to 3 food types available
+    [SerializeField] private float throwForce = 15.0f;
+
+    private AudioSource audioSource;
+    private ThrowState currentState = ThrowState.NotThrowingFood;
+    private int selectedFoodIndex = 0;
+
+    private void Start()
     {
-        GameObject thrownFood = Instantiate(foodItems[foodIndex], transform.position + Vector3.up, transform.rotation);
+        audioSource = GetComponent<AudioSource>();
+    }
 
+    // Input Action Callback (Transition Out: IF commanded by Player Input)
+    public void OnFeedInput(InputAction.CallbackContext ctx)
+    {
+        // Only trigger when input action is performed and currently NOT THROWING FOOD
+        if (ctx.performed && currentState == ThrowState.NotThrowingFood)
+        {
+            // Transition to THROWING FOOD state
+            currentState = ThrowState.ThrowingFood;
+
+            // Execute Actions (Execute Once on Enter)
+            SelectFood(ctx.control.name);
+            ThrowFood(selectedFoodIndex);
+
+            // Transition Out: At conclusion of Action -> Transition back to NOT THROWING FOOD
+            currentState = ThrowState.NotThrowingFood;
+        }
+    }
+
+    private void SelectFood(string keyName)
+    {
+        // Select food based on input key name (up to 3 key buttons)
+        switch (keyName.ToLower())
+        {
+            case "1":
+            case "alpha1":
+                selectedFoodIndex = 0;
+                break;
+            case "2":
+            case "alpha2":
+                if (foodItems != null && foodItems.Length > 1) selectedFoodIndex = 1;
+                break;
+            case "3":
+            case "alpha3":
+                if (foodItems != null && foodItems.Length > 2) selectedFoodIndex = 2;
+                break;
+            default:
+                selectedFoodIndex = 0;
+                break;
+        }
+    }
+
+    private void ThrowFood(int index)
+    {
+        if (foodItems == null || foodItems.Length == 0) return;
+
+        int safeIndex = Mathf.Clamp(index, 0, foodItems.Length - 1);
+
+        // Architectural Constraint: Spawn position at player center
+        Vector3 spawnPosition = transform.position;
+
+        // Instantiate a food prefab at player center
+        GameObject instantiatedFood = Instantiate(foodItems[safeIndex], spawnPosition, transform.rotation);
+
+        // Play a throwing clip
         if (audioSource != null && audioSource.clip != null)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(audioSource.clip);
         }
 
-        Rigidbody foodRb = thrownFood.GetComponent<Rigidbody>();
-        if (foodRb != null)
+        // Add a forward force (throw) to the food instantiated
+        Rigidbody rb = instantiatedFood.GetComponent<Rigidbody>();
+        if (rb != null)
         {
-            foodRb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
         }
     }
-}
 }
