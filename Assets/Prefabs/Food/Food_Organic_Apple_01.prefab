@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2303314}
   - component: {fileID: -452372430373756015}
   - component: {fileID: -3800297502144024082}
+  - component: {fileID: 2944569434123636593}
   m_Layer: 0
   m_Name: Food_Organic_Apple_01
   m_TagString: Untagged
@@ -140,3 +141,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32699966, y: 0.32699984, z: 0.32700062}
   m_Center: {x: -0.0000019073486, y: 0.16349992, z: 0}
+--- !u!114 &2944569434123636593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efa28f9df1f44e80adb7d5809688972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodLifeCycle

@@ -46,16 +46,13 @@ public class PlayerAction : MonoBehaviour
         // Select food based on input key name (up to 3 key buttons)
         switch (keyName.ToLower())
         {
-            case "1":
-            case "alpha1":
+            case "e":
                 selectedFoodIndex = 0;
                 break;
-            case "2":
-            case "alpha2":
+            case "r":
                 if (foodItems != null && foodItems.Length > 1) selectedFoodIndex = 1;
                 break;
-            case "3":
-            case "alpha3":
+            case "w":
                 if (foodItems != null && foodItems.Length > 2) selectedFoodIndex = 2;
                 break;
             default:
@@ -71,7 +68,7 @@ public class PlayerAction : MonoBehaviour
         int safeIndex = Mathf.Clamp(index, 0, foodItems.Length - 1);
 
         // Architectural Constraint: Spawn position at player center
-        Vector3 spawnPosition = transform.position;
+        Vector3 spawnPosition = transform.position + Vector3.up;
 
         // Instantiate a food prefab at player center
         GameObject instantiatedFood = Instantiate(foodItems[safeIndex], spawnPosition, transform.rotation);

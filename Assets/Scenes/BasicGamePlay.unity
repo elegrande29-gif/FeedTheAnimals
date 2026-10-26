@@ -852,7 +852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db67ad148f7a1421d82dff7f3ecd2e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
-  animalPrefab: []
+  animalPrefab:
+  - {fileID: 197258, guid: 782ffceb74ed3aa47a2a09261607aeb2, type: 3}
+  - {fileID: 175826, guid: 09fd058ab758a754d8c7c1b690b4f068, type: 3}
+  - {fileID: 140438, guid: 938147f6ad7eebe4cb99d4a14cb96757, type: 3}
 --- !u!4 &1017952250
 Transform:
   m_ObjectHideFlags: 0
@@ -928,7 +931,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1343695605}
         m_TargetAssemblyTypeName: PlayerAction, Assembly-CSharp
-        m_MethodName: OnThrowInput
+        m_MethodName: OnFeedInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -997,7 +1000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a5c0f52f9d8468fb6d0524e72555de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAction
-  foodItems: []
+  foodItems:
+  - {fileID: 100000, guid: 06cdf427476835b42837c1ca7f8cdbd1, type: 3}
+  - {fileID: 101770, guid: c13306d1f1d9a1a489199ef77f9dba89, type: 3}
+  - {fileID: 100000, guid: 10d25933610222845ad3760a855829c4, type: 3}
   throwForce: 15
 --- !u!114 &1343695606
 MonoBehaviour:

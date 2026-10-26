@@ -29,11 +29,11 @@ public class UIManager : MonoBehaviour
 
     public void ScoreUpdate(int scoreUpdate)
     {
-
+        Debug.Log("Score Updated");
     }
 
     public void AnimalsRemainingUpdate()
     {
-
+        Debug.Log("Animals Remaining Updated");
     }
 }

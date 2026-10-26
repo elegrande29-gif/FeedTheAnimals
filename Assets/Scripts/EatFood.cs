@@ -14,22 +14,28 @@ public class EatFood : MonoBehaviour
 
     private bool IsHungry = true;
 
+    // Handles physical non-trigger Colliders
     private void OnCollisionEnter(Collision collision)
     {
-        if (IsHungry)
+        if (!IsHungry || FoodItEats == null) return;
+
+        // Check if the names match or contain each other
+
+        if (collision.gameObject.name.Contains(FoodItEats.name))
         {
-            if (FoodItEats != null && collision.gameObject.name.Contains(FoodItEats.name))
+
+
+            // Update UI
+            if (UIManager.Instance != null)
             {
-                Destroy(collision.gameObject);
-
-                if (UIManager.Instance != null)
-                {
-                    UIManager.Instance.ScoreUpdate(10);
-                    UIManager.Instance.AnimalsRemainingUpdate();
-                }
-
-                IsHungry = false;
+                UIManager.Instance.ScoreUpdate(10);
+                UIManager.Instance.AnimalsRemainingUpdate();
             }
+
+            // Transition state to Not Hungry
+            IsHungry = false;
         }
+        // Destroy the eaten food
+        Destroy(collision.gameObject);
     }
 }
