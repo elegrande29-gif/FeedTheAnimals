@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EatFood : MonoBehaviour
+public class AnimalMove : MonoBehaviour
 {
     public enum HungerState
     {
