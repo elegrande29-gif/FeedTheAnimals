@@ -365,75 +365,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425805626}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &439021045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 439021047}
-  - component: {fileID: 439021046}
-  - component: {fileID: 439021048}
-  m_Layer: 0
-  m_Name: UIManager (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &439021046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439021045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14fe225eb60d2499bb914e4a3b251dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  uiDocument: {fileID: 0}
---- !u!4 &439021047
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439021045}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.2561, y: 0, z: -2.80626}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &439021048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439021045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
-  m_PanelSettings: {fileID: 0}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
-  m_SortingOrder: 0
-  m_Position: 0
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
-  m_PivotReferenceSize: 0
-  m_Pivot: 0
-  m_WorldSpaceCollider: {fileID: 0}
 --- !u!1 &475985833
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 500197638}
   - component: {fileID: 500197637}
+  - component: {fileID: 500197639}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -624,6 +556,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &500197639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500197636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fe225eb60d2499bb914e4a3b251dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  uiDocument: {fileID: 500197637}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,8 +798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   animalPrefab:
+  - {fileID: 187016, guid: c35f3b540532d1747b95a8a2eea9991d, type: 3}
   - {fileID: 197258, guid: 782ffceb74ed3aa47a2a09261607aeb2, type: 3}
-  - {fileID: 175826, guid: 09fd058ab758a754d8c7c1b690b4f068, type: 3}
   - {fileID: 140438, guid: 938147f6ad7eebe4cb99d4a14cb96757, type: 3}
 --- !u!4 &1017952250
 Transform:
@@ -1002,8 +947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAction
   foodItems:
   - {fileID: 100000, guid: 06cdf427476835b42837c1ca7f8cdbd1, type: 3}
-  - {fileID: 101770, guid: c13306d1f1d9a1a489199ef77f9dba89, type: 3}
   - {fileID: 100000, guid: 10d25933610222845ad3760a855829c4, type: 3}
+  - {fileID: 101770, guid: c13306d1f1d9a1a489199ef77f9dba89, type: 3}
   throwForce: 15
 --- !u!114 &1343695606
 MonoBehaviour:
@@ -1284,5 +1229,4 @@ SceneRoots:
   - {fileID: 500197638}
   - {fileID: 1420489602}
   - {fileID: 1017952250}
-  - {fileID: 439021047}
   - {fileID: 218832657}
