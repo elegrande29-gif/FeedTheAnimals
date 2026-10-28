@@ -2528,6 +2528,7 @@ GameObject:
   - component: {fileID: 9520678}
   - component: {fileID: -1681679122932731950}
   - component: {fileID: 4251166148377083045}
+  - component: {fileID: 2692747138979863958}
   m_Layer: 0
   m_Name: Dog_Labrador_01
   m_TagString: Untagged
@@ -2635,6 +2636,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EatFood
   FoodItEats: {fileID: 100000, guid: 10d25933610222845ad3760a855829c4, type: 3}
+--- !u!65 &2692747138979863958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140438}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36, y: 0.39, z: 0.46}
+  m_Center: {x: -0.38, y: -0.23, z: -0.31}
 --- !u!1 &142034
 GameObject:
   m_ObjectHideFlags: 0

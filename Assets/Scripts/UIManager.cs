@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     private Label animalsRemainingUI;
     private Label scoreUI;
     private int animalsRemaining;
+    private int score;
 
     private void Awake()
     {
@@ -24,16 +25,22 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-
+            animalsRemainingUI = uiDocument.rootVisualElement.Q<Label>("animalsRemainingText");
+            scoreUI = uiDocument.rootVisualElement.Q<Label>("scoreText");
     }
 
     public void ScoreUpdate(int scoreUpdate)
     {
-        Debug.Log("Score Updated");
+        score += scoreUpdate;
+        scoreUI.text = "Score: " + score.ToString();
+        SpawnManager.Instance.GetNumberOfAnimalsToFeed();
     }
 
     public void AnimalsRemainingUpdate()
+    
     {
+        animalsRemaining--;
+        animalsRemainingUI.text = "Animals Remaining: " + animalsRemaining.ToString();
         Debug.Log("Animals Remaining Updated");
     }
 }
